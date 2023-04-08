@@ -5,29 +5,26 @@
 </ion-header>
 
 <ion-content>
- <ion-card>
-  <ion-img src="assets/icon/512.png"></ion-img>
- </ion-card>
- <ion-card class="title">
-  <ion-card-title class="titulo">Iniciar sesión</ion-card-title>
- </ion-card>
-<ion-card-content>
-  <div class="login">
-    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-      <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="text" class="input" formControlName="email"></ion-input>
-      </ion-item>
-      <ion-item lines="full">
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"  class="input" formControlName="password"></ion-input>
-      </ion-item>
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" fill="solid" shape="round" class="loginbtn" >Iniciar sesión</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </div>
-</ion-card-content>
+  <ion-card size-md="5" size-lg="4" size-xs="8">
+    <ion-img src="assets/icon/512.png" size-md="5" size-lg="4" size-xs="8"></ion-img>
+  </ion-card>
+  <ion-card class="title">
+    <ion-card-title class="titulo">Iniciar sesión</ion-card-title>
+  </ion-card>
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-col align-self-center size-md="5" size-lg="4" size-xs="8">
+        <ion-item >
+          <ion-input type="text" placeholder="email" class="input" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="password" class="input" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-row align-self-center>
+          <ion-button type="submit" fill="solid" shape="round" class="loginbtn">Iniciar sesión</ion-button>
+        </ion-row>
+      </ion-col>
+    </ion-grid>
+  </form>
+
 </ion-content>

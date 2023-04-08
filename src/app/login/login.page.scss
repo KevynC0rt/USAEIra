@@ -27,14 +27,11 @@ ion-toolbar{
     opacity:0;
 }*/
 
-ion-item{
-    background-color:#0036AA !important;
-    box-shadow: none !important;
-    ion-label{
-        color:white;
-    }
+    ion-item{
+        --background: #0036AA !important;
+        --color: #fff;
     ion-input{
    // background-color:#0036AA;
-    color:white;
+    --color:white;
     }
 }
