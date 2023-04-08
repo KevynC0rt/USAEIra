@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import { InstitucionesComponent } from './backend/instituciones/instituciones.component';
 import { MenuComponent } from './backend/menu/menu.component';
+import { UsuariosComponent } from './backend/usuarios/usuarios.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)},
   {path: 'instituciones', component: InstitucionesComponent},
-  {path: 'menu', component: MenuComponent}
+  {path: 'menu', component: MenuComponent},
+  {path: 'usuarios', component: UsuariosComponent}
 ];
 
 @NgModule({

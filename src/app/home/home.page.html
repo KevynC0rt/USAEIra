@@ -1,21 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
     <ion-title>
-      Blank
+      AGIM
     </ion-title>
-    <ion-button (click)="onClick()">Cerrar Sesión</ion-button>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <div class="card-container">
+    <ion-card>
+      <ion-row>
+        <ion-col size-md="3" size="12" class="ion-padding ion-blue-bkg">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFIkhGBPO9Ox-FaULcPQ7I7rdEvqYWvTmtVlSpYWpyj5xRrSm6IFSTZgllZPyG0q2IHf8&usqp=CAU"
+            alt="Ionic logo"
+            loading="lazy"
+          />
+        </ion-col>
+        <ion-col size-md="9" size="12" class="welcome">
+          <ion-card-header>
+            <ion-card-title> Bienvenido a AGIM </ion-card-title>
+          </ion-card-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+          <ion-card-content>
+            <ion-button (click)="onClick()">Cerrar Sesión</ion-button>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
   </div>
 </ion-content>
