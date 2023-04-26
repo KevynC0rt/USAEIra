@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment>
+      <ion-segment-button name="trash" [routerLink]="'/vista'">
+        <ion-icon name="person"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button name="trash" [routerLink]="'/vista2'">
+        <ion-icon name="medkit-sharp"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button name="trash" [routerLink]="'/vista3'">
+        <ion-icon name="car"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let traba of trabajo">
+    <ion-card-header>
+      <h2 class="center">Información Clínica</h2>
+      <h2>Nombre: {{traba.nombre}} {{traba.apellidoPate}} {{traba.apellidoMate}}</h2>
+      <ion-card-title>Restricción de Actividades por Indicación Medica:</ion-card-title>
+      <ion-card-subtitle>{{traba.restrMedica}}</ion-card-subtitle>
+      <ion-card-title>Enfermedades que Padezca:</ion-card-title>
+      <ion-card-subtitle>{{traba.enfermePadezca}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-title>Actualmente Recibe Tratamiento Médico:</ion-card-title>
+      <ion-card-subtitle>{{traba.recibeTrata}}</ion-card-subtitle>
+      <ion-card-title>Motivo:</ion-card-title>
+      <ion-card-subtitle>{{traba.motivo}}</ion-card-subtitle>
+      <ion-card-title>Medicamento:</ion-card-title>
+      <ion-card-subtitle>{{traba.medicamento}}</ion-card-subtitle>
+      <ion-card-title>Dosis:</ion-card-title>
+      <ion-card-subtitle>{{traba.dosis}}</ion-card-subtitle>
+      <ion-card-title>Horario:</ion-card-title>
+      <ion-card-subtitle>{{traba.horario}}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

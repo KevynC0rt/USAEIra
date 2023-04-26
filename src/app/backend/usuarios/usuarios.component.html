@@ -8,3 +8,26 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-end">
+      <ion-col size="8">
+          <ion-button [routerDirection]="'root'" [routerLink]="'/registro'">
+          Añadir Usuario
+          </ion-button>
+      </ion-col>
+    </ion-row>
+    <div class="places">
+      <div class="place" *ngFor="let user of users">
+          <div class="image"><img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" alt="5"></div>
+          <div class="info">
+            <h3>Nombre del Trabajador: {{user.nombre}}</h3>
+            <h4><ion-icon name="home"></ion-icon> {{user.email}}</h4>
+            <h5><ion-icon name="call"></ion-icon> {{user.password}}</h5>
+            <ion-button color="danger" name="trash" [routerLink]="'/trabajador'" (click)="onClickDelete(user)">Eliminar</ion-button>
+          </div>
+      </div>
+  </div>
+  </ion-grid>
+</ion-content>

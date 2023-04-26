@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment>
+      <ion-segment-button name="trash" [routerLink]="'/vista2'">
+        <ion-icon name="medkit-sharp"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button name="trash" [routerLink]="'/vista3'">
+        <ion-icon name="car"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button name="trash" [routerLink]="'/vista4'">
+        <ion-icon name="pulse-sharp"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let traba of trabajo">
+    <ion-card-header>
+      <h2 class="center">Información Clínica</h2>
+      <h2>Nombre: {{traba.nombre}} {{traba.apellidoPate}} {{traba.apellidoMate}}</h2>
+      <ion-card-title>Ha Estado Hospitalizado:</ion-card-title>
+      <ion-card-subtitle>{{traba.hospitalizado}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-title>Causas:</ion-card-title>
+      <ion-card-subtitle>{{traba.causas}}</ion-card-subtitle>
+      <ion-card-title>Edad:</ion-card-title>
+      <ion-card-subtitle>{{traba.edad}}</ion-card-subtitle>
+      <ion-card-title>Observaciones:</ion-card-title>
+      <ion-card-subtitle>{{traba.observaciones}}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

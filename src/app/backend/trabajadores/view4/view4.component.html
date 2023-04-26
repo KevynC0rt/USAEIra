@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+
+<ion-toolbar>
+  <ion-segment>
+    <ion-segment-button name="trash" [routerLink]="'/vista3'">
+      <ion-icon name="car"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button name="trash" [routerLink]="'/vista4'">
+      <ion-icon name="pulse-sharp"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button name="trash" [routerLink]="'/vista5'">
+      <ion-icon name="call"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let traba of trabajo">
+    <ion-card-header>
+      <h2 class="center">Alergias</h2>
+      <h2>Nombre: {{traba.nombre}} {{traba.apellidoPate}} {{traba.apellidoMate}}</h2>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-title>Medicamento: {{traba.medicamentos}}</ion-card-title>
+      <ion-card-title>Alimentos: {{traba.alimentos}}</ion-card-title>
+      <ion-card-title>Insectos: {{traba.insectos}}</ion-card-title>
+      <ion-card-title>Otro: {{traba.otros}}</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

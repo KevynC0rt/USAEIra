@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Institucion1 } from 'src/app/models/models';
+import Place from 'src/app/interfaces/place.interface';
+import { PlacesService } from 'src/app/services/places.service';
 
 @Component({
   selector: 'app-instituciones',
@@ -8,21 +9,28 @@ import { Institucion1 } from 'src/app/models/models';
 })
 export class InstitucionesComponent  implements OnInit {
 
-  institucion: Institucion1[] = [];
+  places: Place[];
 
-  constructor() { }
-
-  ngOnInit() {
-    this.loadInstituciones();
+  constructor(
+    private placesService: PlacesService
+  ) {
+    this.places = [{
+      name: 'Prueba de sitio',
+      planta: 'holi',
+      piso: 'string',
+      image: 'string'
+    }];
   }
 
-  loadInstituciones() {
-    this.institucion = [
-      {
-        nombre: 'USAE',
-        planta: 'Planta alta',
-        piso: 'piso 1'
-      }
-    ]
+  ngOnInit(): void {
+    this.placesService.getPlaces().subscribe(places => {
+      this.places = places;
+    })
   }
+
+  async onClickDelete(place: Place) {
+    const response = await this.placesService.deletePlace(place);
+    console.log(response);
+  }
+
 }

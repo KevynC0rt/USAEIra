@@ -1,0 +1,340 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="center">Agregar Nuevo Trabajador</h2>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <ion-list-header>
+      <ion-label>Información Personal</ion-label>
+    </ion-list-header>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Area</ion-label>
+          <ion-select type="text" ngModel class="form-control" formControlName="area" required value="brown" okText="Seleccionar" cancelText="Cancelar">
+            <ion-select-option value="USAE">USAE</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Piso</ion-label>
+          <ion-select type="text" class="form-control" formControlName="piso" required ngModel value="brown" okText="Seleccionar" cancelText="Cancelar">
+            <ion-select-option value="Piso 1">Piso 1</ion-select-option>
+            <ion-select-option value="Piso 2">Piso 2</ion-select-option>
+            <ion-select-option value="Piso 3">Piso 3</ion-select-option>
+            <ion-select-option value="Piso 4">Piso 4</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">No. ISSSTE/IMSS</ion-label>
+          <ion-input type="text" class="form-control" formControlName="nImss" required ngModel min="10" max="20"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Nombre</ion-label>
+          <ion-input type="text" class="form-control" formControlName="nombre" required ngModel max="30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Apellido Paterno</ion-label>
+          <ion-input type="text" class="form-control" formControlName="apellidoPate" required ngModel min="10" max="30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Apellido Materno</ion-label>
+          <ion-input type="text" class="form-control" formControlName="apellidoMate" required ngModel min="10" max="30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Fecha Nacimiento:</ion-label>
+          <ion-input type="date" class="form-control" formControlName="fechaNaci" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Domicilio</ion-label>
+          <ion-input type="text" class="form-control" formControlName="domicilio" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Colonia</ion-label>
+          <ion-input type="text" class="form-control" formControlName="colonia" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Municipio</ion-label>
+          <ion-input type="text" class="form-control" formControlName="municipio" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Telefono</ion-label>
+          <ion-input type="number" class="form-control" formControlName="telefono" required ngModel min="10" max="10"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Peso en KG:</ion-label>
+          <ion-input type="number" class="form-control" formControlName="peso" required ngModel max="10"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Talla en CM:</ion-label>
+          <ion-input type="number" class="form-control" formControlName="talla" required ngModel max="10"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-list-header>
+      <ion-label>Información Médica</ion-label>
+    </ion-list-header>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Restricción de Actividades por Indicación Médica</ion-label>
+          <ion-input type="text" class="form-control" formControlName="restrMedica" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Enfermedades que Padezca</ion-label>
+          <ion-input type="text" class="form-control" formControlName="enfermePadezca" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Actualmente recibe tratamiento medico</ion-label>
+          <ion-input type="text" class="form-control" formControlName="recibeTrata" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Motivo</ion-label>
+          <ion-input type="text" class="form-control" formControlName="motivo" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Medicamento</ion-label>
+          <ion-input type="text" class="form-control" formControlName="medicamento" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Dosis</ion-label>
+          <ion-input type="text" class="form-control" formControlName="dosis" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Horario</ion-label>
+          <ion-input type="text" class="form-control" formControlName="horario" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating"><ion-icon name="add-outline"></ion-icon>Otro</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Ha Estado Hospitalizado</ion-label>
+          <ion-input type="text" class="form-control" formControlName="hospitalizado" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Causas</ion-label>
+          <ion-input type="text" class="form-control" formControlName="causas" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Edad</ion-label>
+          <ion-input type="number" class="form-control" formControlName="edad" required ngModel max="10"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Observaciones</ion-label>
+          <ion-input type="text" class="form-control" formControlName="observaciones" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating"><ion-icon name="add-outline"></ion-icon>Otro</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-list-header>
+      <ion-label>Alergías</ion-label>
+    </ion-list-header>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Medicamentos</ion-label>
+          <ion-input type="text" class="form-control" formControlName="medicamentos" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Alimentos</ion-label>
+          <ion-input type="text" class="form-control" formControlName="alimentos" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Insectos</ion-label>
+          <ion-input type="text" class="form-control" formControlName="insectos" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Otros</ion-label>
+          <ion-input type="text" class="form-control" formControlName="otros" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-list-header>
+      <ion-label>Números de Emergencia</ion-label>
+    </ion-list-header>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Nombre</ion-label>
+          <ion-input type="text" class="form-control" formControlName="nombreEmger" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Parentesco</ion-label>
+          <ion-input type="text" class="form-control" formControlName="parentesco" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Telefono</ion-label>
+          <ion-input type="number" class="form-control" formControlName="telefono2" required ngModel min="10" max="10"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-list-header>
+      <ion-label>Segundo Números de Emergencia</ion-label>
+    </ion-list-header>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Nombre</ion-label>
+          <ion-input type="text" class="form-control" formControlName="nombreEmger2" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Parentesco</ion-label>
+          <ion-input type="text" class="form-control" formControlName="parentesco2" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Telefono</ion-label>
+          <ion-input type="number" class="form-control" formControlName="telefono3" required ngModel min="10" max="10"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">EN CASO DE REQUERIR TRASLADO DE EMERGENCIA, ESPECIFIQUE CLINICA U HOSPITAL</ion-label>
+          <ion-input type="text" class="form-control" formControlName="clinica" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="block" [routerLink]="'/trabajador'">Cancelar</ion-button>
+        <ion-button type="submit" color="medium" expand="block" [routerLink]="'/trabajador'">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

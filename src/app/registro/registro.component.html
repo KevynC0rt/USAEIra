@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="center">Agregar Nuevo Usuario</h2>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <ion-list-header>
+      <ion-label>Información Personal</ion-label>
+    </ion-list-header>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Nombre</ion-label>
+          <ion-input type="text" class="form-control" formControlName="nombre" required ngModel min="10" max="20"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Email</ion-label>
+          <ion-input type="email" class="form-control" formControlName="email" required ngModel max="30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Contraseña</ion-label>
+          <ion-input type="password" class="form-control" formControlName="password" required ngModel min="10" max="30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Confirmar Contraseña</ion-label>
+          <ion-input type="password" class="form-control" formControlName="confirmPassword" required ngModel min="10" max="30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="block" [routerLink]="'/usuarios'">Cancelar</ion-button>
+        <ion-button type="submit" color="medium" expand="block" [routerLink]="'/usuarios'">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

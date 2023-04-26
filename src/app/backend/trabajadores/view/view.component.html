@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+  
+  <ion-toolbar>
+      <ion-segment>
+        <ion-segment-button name="trash" [routerLink]="'/vista'">
+          <ion-icon name="person"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button name="trash" [routerLink]="'/vista2'">
+          <ion-icon name="medkit-sharp"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button name="trash" [routerLink]="'/vista3'">
+          <ion-icon name="car"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let traba of trabajo">
+    <ion-card-header>
+      <h2 class="center">Información Personal</h2>
+      <h2>Nombre: {{traba.nombre}} {{traba.apellidoPate}} {{traba.apellidoMate}}</h2>
+      <ion-card-title>Area: {{traba.area}}</ion-card-title>
+      <ion-card-title>Piso: {{traba.piso}}</ion-card-title>
+      <ion-card-title>No. ISSSTE/:IMSS: {{traba.nImss}}</ion-card-title>
+      <ion-card-title>Fecha de Nacimiento: {{traba.fechaNaci}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-title>Domicilio: {{traba.domicilio}}</ion-card-title>
+      <ion-card-title>Colonia: {{traba.colonia}}</ion-card-title>
+      <ion-card-title>Municipio: {{traba.municipio}}</ion-card-title>
+      <ion-card-title>Telefono: {{traba.telefono}}</ion-card-title>
+      <ion-card-title>Peso: {{traba.peso}}</ion-card-title>
+      <ion-card-title>Talla: {{traba.talla}}</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

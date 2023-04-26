@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>     
+    <ion-title>
+      AGIM
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h2 class="center">Agregar Nueva Institución</h2>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Nombre</ion-label>
+          <ion-input type="text" ngModel class="form-control" formControlName="name" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Planta</ion-label>
+          <ion-input type="text" class="form-control" formControlName="planta" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="form-label" position="floating">Piso</ion-label>
+          <ion-input type="text" class="form-control" formControlName="piso" required ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="block" [routerLink]="'/instituciones'">Cancelar</ion-button>
+        <ion-button type="submit" color="medium" expand="block" [routerLink]="'/instituciones'">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

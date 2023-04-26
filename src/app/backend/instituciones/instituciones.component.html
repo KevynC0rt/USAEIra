@@ -14,29 +14,21 @@
 
     <ion-row class="ion-justify-content-end">
       <ion-col size="9">
-        <ion-button>
-          Añadir Institucion
-        </ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row *ngFor="let institu of institucion">
-      <ion-col>
-        <ion-label>{{institu.nombre}}</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label>{{institu.planta}}</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label>{{institu.piso}}</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-buttons>
-          <ion-button>
-            <ion-icon color="danger" name="trash"></ion-icon>
+          <ion-button [routerDirection]="'root'" [routerLink]="'/insert'">
+          Añadir Institución
           </ion-button>
-        </ion-buttons>
       </ion-col>
     </ion-row>
+    <div class="places">
+      <div class="place" *ngFor="let place of places">
+          <div class="image" [ngStyle]="{ backgroundImage: 'url('+place.image+')' }"><img src="https://cdn-icons-png.flaticon.com/512/6526/6526117.png" alt="5"></div>
+          <div class="info">
+              <h3>Nombre de Institución: {{place.name}}</h3>
+              <h4>Planta: {{place.planta}}</h4>
+              <h5>Piso: {{place.piso}}</h5>
+              <ion-button color="danger" name="trash" (click)="onClickDelete(place)">Borrar</ion-button>
+          </div>
+      </div>
+  </div>
   </ion-grid>
 </ion-content>

@@ -1,9 +1,11 @@
-export interface Trabajador {
-    img: string;
+export default interface Trabajador {
+    id?: string;
     area: string;
     piso: string;
     nImss: string;
     nombre: string;
+    apellidoPate: string;
+    apellidoMate: string;
     fechaNaci: string;
     domicilio: string;
     colonia: string;
@@ -13,16 +15,16 @@ export interface Trabajador {
     talla: string;
     restrMedica: string;
     enfermePadezca: string;
-    recibeTrata: string;
+    recibeTrata: 'Si'| 'No';
     motivo: string;
     medicamento: string;
     dosis: string;
     horario: string;
-    hospitalizado: string;
+    hospitalizado: 'Si'| 'No';
     causas: string;
     edad: string;
     observaciones: string;
-    alergias: string;
+    alergias: 'Si'| 'No';
     medicamentos: string;
     alimentos: string;
     insectos: string;
@@ -33,4 +35,5 @@ export interface Trabajador {
     nombreEmger2: string;
     parentesco2: string;
     telefono3: string;
+    clinica: string;
 }
